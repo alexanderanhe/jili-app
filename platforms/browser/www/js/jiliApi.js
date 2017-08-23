@@ -40,17 +40,17 @@ $(document).ready( function(){
 function updateList() {
   $.getJSON( "http://newsletter.pe.hu/app/?get", function( data ) {
 
-    console.log(data);
     var items = [];
     $.each( data, function( key, val ) {
-      items.push( "<li id='" + key + "'>" + val.phoneNumber + ' ' + val.delay + ' ' + val.message + "</li>" );
+      items.push( "<li data-role='collapsible' data-iconpos='right' data-inset='false' data-name='" + key + "'><h2>" + val.phoneNumber + '</h2>' +
+        '<ul data-role="listview" data-theme="b"><li>Delay: ' + val.delay + '</li><li>' + val.message + "</li></ul></li>" );
     });
+
+    $( "#list-content" ).html('');
    
     $( "<ul/>", {
-      "class": "my-new-list",
+      "class": ' data-role="listview"',
       html: items.join( "" )
     }).appendTo( "#list-content" );
-
-    console.log(items);
   });
 }
