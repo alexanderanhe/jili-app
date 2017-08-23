@@ -18,20 +18,18 @@
                         <img src="img/logo.png" id="logo"  />
                     </div>
                     <div id="menu">
-                        <a data-icon="flat-heart" data-theme="a" href="#second-page" data-role="button">Second Page</a>
-                        <a data-icon="flat-time" data-theme="f" href="#due-page"  data-role="button">Fake Btn</a>
+                        <a data-icon="flat-checkround" data-theme="a" href="#start-page" data-role="button">Empezar</a>
+                        <a data-icon="flat-time" data-theme="d" href="#due-page"  data-role="button">Fake Btn</a>
                         <fieldset class="ui-grid-a">
-                            <div class="ui-block-a"> <a data-icon="flat-checkround" data-theme="e" href="#tips-page"  data-role="button">Fake Btn</a></div>
+                            <div class="ui-block-a"> <a data-icon="flat-checkround" data-theme="f" href="#settings-page"  data-role="button">Setting</a></div>
                             <div class="ui-block-b"><a data-icon="ms-question" data-theme="g" href="#about-page"  data-role="button" >About</a></div>
                         </fieldset>
-                        <a data-icon="flat-time" data-theme="a" href="#due-page"  data-role="button">Fake Btn</a>
-
 
                     </div>
                 </div>
             </div><!-- /page  -->
 
-            <div  id="second-page" data-role="page">
+            <div  id="settings-page" data-role="page">
                 <div data-role="header" data-id="header" id="header" data-position="fixed" class="ui-header">
                     <a href="#home-page"  data-role="button" data-icon="arrow-l" data-inline="true" >Back</a>
                     <h1>Sample Form</h1>
@@ -86,6 +84,34 @@
                 </div>
             </div>
 
+            <div  id="start-page" data-role="page">
+                <div data-role="header" data-id="header" id="header" data-position="fixed" class="ui-header">
+                    <a href="#home-page"  data-role="button" data-icon="arrow-l" data-inline="true" >Back</a>
+                    <h1>Send a Message</h1>
+                </div>
+                <div data-role="content" >
+                    <form  id="send-form" action="">
+                        <label for="phoneNumber">Phone number</label>
+                        <input type="tel" name="phoneNumber" id="phoneNumber" data-mini="true" placeholder="+52 5512345678"/>
+                        <label for="delay">Delay <span class="small-text">(optional)</span></label>
+                        <input type="tel" name="delay" id="delay" data-mini="true" placeholder="15"/>
+                        <label for="message">Message</label>
+                        <input type="text" name="message" id="message" data-mini="true" placeholder="Text something..."/>
+
+                        <button type="submit" data-theme="f" data-mini="false" class="ui-btn-hidden" aria-disabled="false">Send</button>
+                    </form>
+                </div>
+                <div id="footer" data-role="footer" data-id="footer1" data-position="fixed" data-tap-toggle="false">
+                    <div id="navbar" data-role="navbar">
+                        <ul>
+                            <li><a id="map-button" href="#second-page" data-icon="flat-location" data-theme="b">Map</a></li>
+                            <li><a id="list-button" href="#list-page" data-icon="flat-menu">List</a></li>
+                            <li><a id="search-button" href="#search-page" data-icon="ms-search">Search</a></li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+
 
             <div  id="about-page" data-role="page">
                 <div data-role="header" data-id="header1" data-position="fixed" class="ui-header">
@@ -97,6 +123,7 @@
                     <p>Este es un pinche texto de prueba</p>
                 </div>
             </div>
+            
         </div>
 
 
