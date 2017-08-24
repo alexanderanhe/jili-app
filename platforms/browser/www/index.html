@@ -12,39 +12,28 @@
     </head>
     <body>
         <div id="app">
-            <div id="login-page" data-role="page">
+            <div id="home-page" data-role="page">
+                <div data-role="header" data-id="header" id="header" data-position="fixed" class="ui-header">
+                    <a href="#panel"  data-role="button" data-icon="flat-menu" data-inline="true" ></a>
+                    <h1></h1>
+                </div>
                 <div data-role="content" >
                     <div id="logoContainer" class="centerText">
                         <img src="img/logo.png" id="logo"  />
                     </div>
                     <div id="menu">
-                        <form  id="login-form" action="">
-                            <label for="email">Email</label>
-                            <input type="text" name="email" id="email" data-mini="false" placeholder="username or email address" autofocus />
-                            <label for="password">Password</label>
-                            <input type="password" name="password" id="password" data-mini="false" placeholder="Password"/>
-                        </form>
-                        <a data-icon="check" data-theme="b" href="#home-page"  data-role="button">Log In</a>
-                        <div align="center">or</div>
-                        <a data-icon="check" data-theme="f" href="#home-page"  data-role="button">Facebook</a>
-
+                        <textarea name="messenger" id="messenger" placeholder="Writeme something..." autofocus autocomplete="false"></textarea>
+                        <a href="#some-page" id="send" data-icon="check" data-theme="g" data-mini="true" data-role="button" onclick="putText();">Go</a>
+                        <textarea name="response" id="response" placeholder=""></textarea>
                     </div>
                 </div>
-            </div><!-- /page  -->
-            <div id="home-page" data-role="page">
-                <div data-role="content" >
-                    <div id="logoContainer" class="centerText">
-                        <img src="img/logo.png" id="logo"  />
-                    </div>
-                    <div id="menu">
-                        <a data-icon="check" data-theme="a" href="#search-page" data-role="button">Start</a>
-                        <a data-icon="ms-question" data-theme="d" href="#faq-page"  data-role="button">FAQ</a>
-                        <a data-icon="ms-question" data-theme="b" href="#news-page"  data-role="button">News</a>
-                        <fieldset class="ui-grid-a">
-                            <div class="ui-block-a"> <a data-icon="gear" data-theme="f" href="#settings-page"  data-role="button">Setting</a></div>
-                            <div class="ui-block-b"><a data-icon="info" data-theme="g" href="#about-page"  data-role="button" >About</a></div>
-                        </fieldset>
-
+                <div id="footer" data-role="footer" data-id="footer1" data-position="fixed" data-tap-toggle="false">
+                    <div id="navbar" data-role="navbar">
+                        <ul>
+                            <li><a id="search-button" href="#search-page" data-icon="ms-search">Search</a></li>
+                            <li class="active"><a id="map-button" href="#create-page" data-icon="flat-location">Create</a></li>
+                            <li><a id="list-button" href="#list-page" data-icon="flat-menu">List</a></li>
+                        </ul>
                     </div>
                 </div>
             </div><!-- /page  -->
@@ -95,34 +84,6 @@
                 </div>
             </div>
 
-            <div  id="create-page" data-role="page">
-                <div data-role="header" data-id="header" id="header" data-position="fixed" class="ui-header">
-                    <a href="#home-page"  data-role="button" data-icon="arrow-l" data-inline="true" >Back</a>
-                    <h1>Send a Message</h1>
-                </div>
-                <div data-role="content" >
-                    <form  id="send-form" action="">
-                        <label for="phoneNumber">Phone number</label>
-                        <input type="tel" name="phoneNumber" id="phoneNumber" data-mini="true" placeholder="+52 5512345678"/>
-                        <label for="delay">Delay <span class="small-text">(optional)</span></label>
-                        <input type="tel" name="delay" id="delay" maxlength="3" data-mini="true" placeholder="15"/>
-                        <label for="message">Message</label>
-                        <input type="text" name="message" id="message" maxlength="255" data-mini="true" placeholder="Text something..."/>
-
-                        <button type="button" id="insert" data-theme="f" data-mini="false" class="ui-btn-hidden" aria-disabled="false">Send</button>
-                    </form>
-                </div>
-                <div id="footer" data-role="footer" data-id="footer1" data-position="fixed" data-tap-toggle="false">
-                    <div id="navbar" data-role="navbar">
-                        <ul>
-                            <li><a id="search-button" href="#search-page" data-icon="ms-search">Search</a></li>
-                            <li><a id="map-button" href="#create-page" data-icon="flat-location" data-theme="b">Create</a></li>
-                            <li><a id="list-button" href="#list-page" data-icon="flat-menu">List</a></li>
-                        </ul>
-                    </div>
-                </div>
-            </div>
-
             <div  id="list-page" data-role="page">
                 <div data-role="header" data-id="header" id="header" data-position="fixed" class="ui-header">
                     <a href="#home-page"  data-role="button" data-icon="arrow-l" data-inline="true" >Back</a>
@@ -147,7 +108,7 @@
                     <a href="#home-page"  data-role="button" data-icon="arrow-l" data-inline="true" >Back</a>
                     <h1>Search People</h1>
                 </div>
-                <div data-role="content" id="map_search" style="height: 90vh; background-color: #000;background-image: url(img/map_ex.jpg);background-position: top center;background-size: auto;background-repeat:no-repeat;">
+                <div data-role="content" id="map_search">
                 </div>
                 <div id="footer" data-role="footer" data-id="footer1" data-position="fixed" data-tap-toggle="false">
                     <div id="navbar" data-role="navbar">
@@ -182,6 +143,19 @@
 
 
         <script type="text/javascript" src="js/index.js"></script>
+
+        <script type="text/javascript">
+        $(document).ready( function(){
+
+            $("#send").click(function(){
+                $("#response").val($("#messenger").val());
+                $("#messenger").val('');
+
+                return false;
+           });
+
+         });
+        </script>
 
         <script type="text/javascript">
             app.initialize();
