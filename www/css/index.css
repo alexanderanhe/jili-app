@@ -101,11 +101,21 @@ margin: .8em 30% .8em;
 
 
 /* New */
-
-#home-page, #header, #navbar ul li a {
+#home-page, #header, #top-navbar ul li a, #bottom-navbar {
     background: #000000;
 }
-#navbar ul li.active a, #navbar ul li a:hover {
+#home-page .content {
+    background-image: url(../img/eyes_oo1.png);
+    background-repeat: no-repeat;
+    background-position: center;
+    background-attachment: fixed;
+    background-size: 100% auto;
+    height: 70vh;
+}
+#top-navbar ul li a span{
+    padding-top: .8em;
+}
+#top-navbar ul li.active a, #top-navbar ul li a:hover {
     background: #050505 !important;
 }
 #header {
@@ -121,25 +131,47 @@ margin: .8em 30% .8em;
     width: 100%;
     margin: 0;
 }
-#messenger, #response{
+#response{
     margin-top: 5px;
-    max-width: 100%;
-    max-height: 70px;
     height: 70px;
-    background: #000000;
     border-color: #010101;
     text-align: center;
     color: #00FF00;
 }
-#messenger {
+.message div, .btnSend div {
+    padding: .3em .1em;
+}
+#message, .message div {
+    border-color: #010101 !important;
+    background: #000000;
     color: #FFFFFF;
+    font-size: 16px;
+    margin: 0;
 }
 #send{
     background-color: #000000;
     border-color: #00FF00;
-    max-width: 60%;
-    margin: 0 auto;
+    width: 100%;
 }
+#bottom-navbar ul{
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    position: relative;
+    display: block;
+    border: 0;
+    max-width: 100%;
+    overflow: visible;
+    zoom: 1;
+}
+#bottom-navbar ul li.message{
+    width: 80%;
+}
+#bottom-navbar ul li.btnSend{
+    width: 20%;
+}
+
+
 ::-webkit-input-placeholder { /* Chrome/Opera/Safari */
   color: #222222;
 }

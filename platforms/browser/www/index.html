@@ -13,26 +13,26 @@
     <body>
         <div id="app">
             <div id="home-page" data-role="page">
-                <div data-role="header" data-id="header" id="header" data-position="fixed" class="ui-header">
-                    <a href="#panel"  data-role="button" data-icon="flat-menu" data-inline="true" ></a>
-                    <h1></h1>
-                </div>
-                <div data-role="content" >
-                    <div id="logoContainer" class="centerText">
-                        <img src="img/logo.png" id="logo"  />
+                <div data-role="header" data-id="header" id="header" data-position="fixed">
+                    <div id="top-navbar" data-role="navbar">
+                        <ul>
+                            <li><a href="#panel" data-icon="flat-menu" data-inline="true" ></a></li>
+                            <li class="active"><a id="search-button" href="#search-page">Search</a></li>
+                            <li><a id="map-button" href="#create-page">Create</a></li>
+                            <li><a id="list-button" href="#list-page">List</a></li>
+                        </ul>
                     </div>
+                </div>
+                <div class="content" data-role="content" >
                     <div id="menu">
-                        <textarea name="messenger" id="messenger" placeholder="Writeme something..." autofocus autocomplete="false"></textarea>
-                        <a href="#some-page" id="send" data-icon="check" data-theme="g" data-mini="true" data-role="button">Go</a>
-                        <textarea name="response" id="response" placeholder=""></textarea>
+                        <div id="response"></div>
                     </div>
                 </div>
                 <div id="footer" data-role="footer" data-id="footer1" data-position="fixed" data-tap-toggle="false">
-                    <div id="navbar" data-role="navbar">
+                    <div id="bottom-navbar" data-role="navbar">
                         <ul>
-                            <li><a id="search-button" href="#search-page" data-icon="ms-search">Search</a></li>
-                            <li class="active"><a id="map-button" href="#create-page" data-icon="flat-location">Create</a></li>
-                            <li><a id="list-button" href="#list-page" data-icon="flat-menu">List</a></li>
+                            <li class="message"><input type="text" name="message" id="message" placeholder="Write me something..." autofocus autocomplete="false" /></li>
+                            <li class="btnSend"><a href="#some-page" id="send" data-icon="check" data-theme="g" data-mini="true" data-role="button"></a></li>
                         </ul>
                     </div>
                 </div>
@@ -148,8 +148,8 @@
         $(document).ready( function(){
 
             $("#send").click(function(){
-                $("#response").val($("#messenger").val());
-                $("#messenger").val('');
+                $("#response").html($("#message").val());
+                $("#message").val('');
 
                 return false;
            });
