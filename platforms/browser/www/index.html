@@ -144,20 +144,18 @@
         <script type="text/javascript" src="js/index.js"></script>
 
         <script type="text/javascript">
-        $(document).ready( function(){
-
-            $("#send").click(function(){
-                $("#conversation").html('<p class="me">' + $("#message").val() + '</p>');
-                $("#message").val('');
-
-                return false;
-           });
-
-         });
-        </script>
-
-        <script type="text/javascript">
             app.initialize();
+            $(document).ready( function(){
+
+                $("#send").click(function(){
+                    var data = $("#message").val();
+                    app.getAnswer(data);
+                    $("#message").val('');
+
+                    return false;
+               });
+
+             });
         </script>
     </body>
 </html>
