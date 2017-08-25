@@ -118,7 +118,7 @@ margin: .8em 30% .8em;
 }
 #conversation p{
     text-align: center;
-    font-size: 18px;
+    font-size: 20px;
     margin: 2px 0;
 }
 #conversation p.bot{ color: #999999; }
@@ -132,7 +132,7 @@ margin: .8em 30% .8em;
     font-size: 14px;
     margin: 0;
 }
-#message{ color: #0066ff; }
+#message{ color: #0066ff; font-size: 20px; }
 #send{
 
 }
