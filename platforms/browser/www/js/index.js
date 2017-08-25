@@ -80,12 +80,14 @@ var app = {
     translater: function(jsonReq){
         var output = JSON.parse(jsonReq);  
 
-        var element = this.create("P", {
-            'id': output.messages[0].id,
-            'class': 'bot'
-        }, output.messages[0].text);
+        output.messages.forEach(function(message) {
+            var element = app.create("P", {
+                'id': message.id,
+                'class': 'bot'
+            }, message.text);
 
-        this.getById(this.ELEM_CONVERSATION).appendChild(element);
+            app.getById(app.ELEM_CONVERSATION).appendChild(element);
+        });
     }
 
 };
