@@ -121,8 +121,8 @@ margin: .8em 30% .8em;
     font-size: 20px;
     margin: 2px 0;
 }
-#conversation p.bot{ color: #999999; }
-#conversation p.me{ color: #0066ff; }
+#conversation p.bot{ color: #0066ff; }
+#conversation p.me{ color: #999999; }
 .message div {
     padding: .3em .5em;
 }
