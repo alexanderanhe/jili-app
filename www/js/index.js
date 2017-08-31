@@ -70,7 +70,7 @@ var app = {
             xhttpRequest.open("POST", app.URL_BOT, true);
             xhttpRequest.withCredentials = false;
             xhttpRequest.setRequestHeader("Content-type", "application/x-www-form-urlencoded");
-            xhttpRequest.send("command=whoiam");
+            xhttpRequest.send("command=whoami");
         }
     },
     getById: function(id){
@@ -94,7 +94,7 @@ var app = {
         };
         xhttp.open("POST", app.URL_BOT, true);
         xhttp.setRequestHeader("Content-type", "application/x-www-form-urlencoded");
-        xhttp.send("command=" + data);
+        xhttp.send("idUser=" + getUserId() + "command=" + data);
 
         var element = this.create("P", {
             'id': '0',
