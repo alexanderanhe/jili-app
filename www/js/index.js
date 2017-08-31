@@ -94,7 +94,7 @@ var app = {
         };
         xhttp.open("POST", app.URL_BOT, true);
         xhttp.setRequestHeader("Content-type", "application/x-www-form-urlencoded");
-        xhttp.send("idUser=" + getUserId() + "command=" + data);
+        xhttp.send("idUser=" + this.getUserId() + "command=" + data);
 
         var element = this.create("P", {
             'id': '0',
