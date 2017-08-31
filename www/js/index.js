@@ -49,7 +49,7 @@ var app = {
 
     },
     getUserId: function(){
-        if (localStorage.getItem('USER_ID')) {
+        if (localStorage.getItem('USER_ID') != null && localStorage.getItem('USER_ID') != '') {
 
             console.log("USER_ID 1", localStorage.getItem('USER_ID'));
             return localStorage.getItem('USER_ID');
