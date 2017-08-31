@@ -26,6 +26,7 @@ var app = {
         console.log("console log init");
         this.bindEvents();
         this.initFastClick();
+        this.getUserId();
     },
     // Bind Event Listeners
     //
@@ -46,6 +47,31 @@ var app = {
         // Start adding your code here....
         this.getAnswer();
 
+    },
+    getUserId: function(){
+        if (localStorage.getItem('USER_ID')) {
+
+            console.log("USER_ID 1", localStorage.getItem('USER_ID'));
+            return localStorage.getItem('USER_ID');
+
+        } else {
+            var xhttpRequest = new XMLHttpRequest();
+            xhttpRequest.onreadystatechange = function() {
+            if (this.readyState == 4 && this.status == 200) {
+                var data = JSON.parse(this.responseText);
+                console.log('USER_ID', data.idUser);
+                localStorage.setItem("USER_ID", data.idUser);
+                return data.idUser;
+            }
+            };
+            xhttpRequest.onload = function () {
+              // Request finished. Do processing here.
+            };
+            xhttpRequest.open("POST", app.URL_BOT, true);
+            xhttpRequest.withCredentials = false;
+            xhttpRequest.setRequestHeader("Content-type", "application/x-www-form-urlencoded");
+            xhttpRequest.send("command=whoiam");
+        }
     },
     getById: function(id){
         return document.getElementById(id);
